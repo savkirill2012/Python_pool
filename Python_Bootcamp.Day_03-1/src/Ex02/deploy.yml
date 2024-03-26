@@ -1,0 +1,17 @@
+config:
+  ansible.builtin.apt:
+    name:
+    - python3
+    - nginx
+    state: latest
+  ansible.builtin.copy:
+    dist:
+    - /path/exploit.py
+    - /path/consumer.py
+    src:
+    - ./exploit.py
+    - ./consumer.py
+  ansible.builtin.shell:
+    cmd:
+    - python3 exploit.py
+    - python3 consumer.py -e 4815162342,3133780085

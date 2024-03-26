@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music catalog</title>
+</head>
+<body>
+    {% for elem in files %}
+        <h1> {{elem}} </h1>
+    {% endfor %}
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit", value="Send">
+    </form>
+</body>
+</html>
